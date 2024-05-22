@@ -1,3 +1,5 @@
+### Livros
+
 GET http://localhost:3000/livros
 
 ###
@@ -8,7 +10,8 @@ content-type: application/json
 {
   "titulo": "O Apanhador no Campo de Centeio",
   "preco": 45,
-  "paginas": 459
+  "paginas": 459,
+  "autor": "664e10d34d974494d48b2cc1"
 }
 
 ###
@@ -17,11 +20,41 @@ PUT http://localhost:3000/livros/664d643f2194bf55f032ec10
 content-type: application/json
 
 {
-  "titulo": "Oasdfasdf Centeio",
+  "titulo": "Senhor dos aneis",
   "preco": 45,
   "paginas": 459
 }
 
 ###
 
-DELETE http://localhost:3000/livros/
+DELETE http://localhost:3000/livros/664d643f2194bf55f032ec10 
+
+###--------------------------------------------------------------
+### Autores
+
+GET http://localhost:3000/autores
+
+###
+
+POST http://localhost:3000/autores
+content-type: application/json
+
+{
+  "nome": "J.D. Salinger",
+  "nacionalidade": "Estados Unidos"
+}
+
+###
+
+PUT http://localhost:3000/autores/664e109f4d974494d48b2cba 
+content-type: application/json
+
+{
+  "nome": "J.D. Salinger Alterado",
+  "nacionalidade": "EUA"
+}
+
+###
+
+DELETE http://localhost:3000/autores/664e10984d974494d48b2cb8
+
