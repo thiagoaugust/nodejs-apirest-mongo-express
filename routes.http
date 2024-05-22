@@ -1,1 +1,27 @@
-GET http://localhost:3000
+GET http://localhost:3000/livros
+
+###
+
+POST http://localhost:3000/livros 
+content-type: application/json
+
+{
+  "titulo": "O Apanhador no Campo de Centeio",
+  "preco": 45,
+  "paginas": 459
+}
+
+###
+
+PUT http://localhost:3000/livros/664d643f2194bf55f032ec10 
+content-type: application/json
+
+{
+  "titulo": "Oasdfasdf Centeio",
+  "preco": 45,
+  "paginas": 459
+}
+
+###
+
+DELETE http://localhost:3000/livros/
