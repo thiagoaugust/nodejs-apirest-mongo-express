@@ -11,6 +11,7 @@ content-type: application/json
   "titulo": "O Apanhador no Campo de Centeio",
   "preco": 45,
   "paginas": 459,
+  "editora": "Maracutaia",
   "autor": "664e10d34d974494d48b2cc1"
 }
 
