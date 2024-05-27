@@ -1,6 +1,6 @@
 ### Livros
 
-GET http://localhost:3000/livros
+GET http://localhost:3000/livros/664e12e83e893e40571cce1f
 
 ###
 
@@ -28,12 +28,12 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:3000/livros/664d643f2194bf55f032ec10 
+DELETE http://localhost:3000/livros/664e12e83e893e40571cce1f
 
 ###--------------------------------------------------------------
 ### Autores
 
-GET http://localhost:3000/autores
+GET http://localhost:3000/autores/664e10d34d974494d48b2cc2
 
 ###
 
