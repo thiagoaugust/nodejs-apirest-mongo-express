@@ -8,8 +8,8 @@ POST http://localhost:3000/autores
 content-type: application/json
 
 {
-  "nome": "J.D. Salinger",
-  "nacionalidade": ""
+  "nome": "Marcelo Rubens Paiva",
+  "nacionalidade": "Brasil"
 }
 
 ###

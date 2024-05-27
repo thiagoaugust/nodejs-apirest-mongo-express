@@ -1,12 +1,14 @@
-import { livros } from "../models/index.js";
+import { autores, livros } from "../models/index.js";
 import NaoEncontrado from "../erros/NaoEncontrado.js";
 
 class LivroController {
   static listarLivros = async (req, res, next) => {
     try {
-      const livrosResultado = await livros.find().populate("autor").exec();
+      const livrosResultado = livros.find();
 
-      res.status(200).json(livrosResultado);
+      req.resultado = livrosResultado;
+
+      next();
     } catch (erro) {
       next(erro);
     }
@@ -68,20 +70,40 @@ class LivroController {
 
   static listarLivroPorFiltro = async (req, res, next) => {
     try {
-      const { editora, titulo } = req.query;
+      const busca = await processaBusca(req.query);
 
-      const busca = {};
+      if (busca !== null) {
+        const livrosResultado = livros.find(busca).populate("autor");
+        req.resultado = livrosResultado;
 
-      if (editora) busca.editora = editora;
-      if (titulo) busca.titulo = titulo;
-
-      const livrosResultado = await livros.find(busca);
-
-      res.status(200).send(livrosResultado);
+        next();
+      } else {
+        res.status(200).send([]);
+      }
     } catch (erro) {
+      console.log(erro);
       next(erro);
     }
   };
+}
+
+async function processaBusca(parametros) {
+  const { editora, titulo, nomeAutor } = parametros;
+  let busca = {};
+
+  if (editora) busca.editora = editora;
+  if (titulo) busca.titulo = { $regex: titulo, $options: "i" };
+
+  if (nomeAutor) {
+    const autorEncontrado = await autores.findOne({ nome: nomeAutor });
+    if (autorEncontrado !== null) {
+      busca.autor = autorEncontrado._id;
+    } else {
+      busca = null;
+    }
+  }
+
+  return busca;
 }
 
 export default LivroController;
