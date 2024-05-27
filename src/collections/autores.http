@@ -1,0 +1,28 @@
+### Autores
+
+GET http://localhost:3000/autores
+
+###
+
+POST http://localhost:3000/autores
+content-type: application/json
+
+{
+  "nome": "J.D. Salinger",
+  "nacionalidade": "Estados Unidos"
+}
+
+###
+
+PUT http://localhost:3000/autores/664e109f4d974494d48b2cba 
+content-type: application/json
+
+{
+  "nome": "J.D. Salinger Alterado",
+  "nacionalidade": "EUA"
+}
+
+###
+
+DELETE http://localhost:3000/autores/664e10984d974494d48b2cb8
+

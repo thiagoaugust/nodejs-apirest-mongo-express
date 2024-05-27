@@ -1,0 +1,35 @@
+### Livros - Get todos os livros
+
+GET http://localhost:3000/livros
+
+### Livros - Get livro por id
+
+GET http://localhost:3000/livros
+
+### Livros - Post livro
+
+POST http://localhost:3000/livros 
+content-type: application/json
+
+{
+  "titulo": "O Apanhador no Campo de Centeio",
+  "preco": 45,
+  "paginas": 459,
+  "editora": "Maracutaia",
+  "autor": "664e10d34d974494d48b2cc1"
+}
+
+### Livros - Put livro- altera por id
+
+PUT http://localhost:3000/livros/664d643f2194bf55f032ec10 
+content-type: application/json
+
+{
+  "titulo": "Senhor dos aneis",
+  "preco": 45,
+  "paginas": 459
+}
+
+### Livros - Deleta livro por id
+
+DELETE http://localhost:3000/livros/664d643f2194bf55f032ec10 
