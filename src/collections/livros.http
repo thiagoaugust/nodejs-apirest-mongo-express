@@ -14,8 +14,8 @@ content-type: application/json
 {
   "titulo": "O Apanhador no Campo de Centeio",
   "preco": 45,
-  "paginas": 459,
-  "editora": "Maracutaia",
+  "numeroPaginas": 60000,
+  "editora": "Casa do Código",
   "autor": "664e10d34d974494d48b2cc1"
 }
 
@@ -27,7 +27,7 @@ content-type: application/json
 {
   "titulo": "Senhor dos aneis",
   "preco": 45,
-  "paginas": 459
+  "numeroPaginas": 459
 }
 
 ### Livros - Deleta livro por id

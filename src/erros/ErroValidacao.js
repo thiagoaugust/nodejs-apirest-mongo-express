@@ -5,7 +5,7 @@ class ErroValidacao extends ErroBase {
     const mensagemErro = Object.values(erro.errors)
       .map((erro) => erro.message)
       .join("; ");
-    super(`Os seguintes erros foram encontrados: ${mensagemErro}`);
+    super(`Os seguintes erros foram encontrados: ${mensagemErro}`, 400);
   }
 }
 
